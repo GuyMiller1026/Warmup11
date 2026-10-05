@@ -29,9 +29,10 @@
 /// assert_eq!(largest(&[-5, -2, -9]), -2);
 /// ```
 pub fn largest(values: &[i32]) -> i32 {
-    let mut biggest = 0;
-    for i in 1..values.len() - 1 {
-        if values[i] < biggest {
+    if values.is_empty() { return 0; }
+    let mut biggest = values [0];
+    for i in 1..values.len() {
+        if values[i] > biggest {
             biggest = values[i];
         }
     }
